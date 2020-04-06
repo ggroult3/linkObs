@@ -1,0 +1,10 @@
+body {
+    margin : 0px;
+    overflow: hidden; 
+    font-family: Monospace;
+}
+  
+h1 {
+    font-style: italic;
+    color: #171cb4;
+}
