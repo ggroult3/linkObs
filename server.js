@@ -10,6 +10,11 @@ app.get('/',function(req,res){
     console.log('\nConnected to the webapp !\n')
 })
 
+app.get('/getData', function(req,res){
+    res.status(200).sendFile(path.join(__dirname, '/assets/json/data.json'))
+    console.log('\nData sent')
+})
+
 app.get('/assets/:dir/:filename', function(req,res){
     const filename = req.params.filename
     const dir = req.params.dir

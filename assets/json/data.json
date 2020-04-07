@@ -1,0 +1,36 @@
+{
+    "marker1" : {
+        "name" : "E5",
+        "position" : {
+            "x" : 15,
+            "y" : 21,
+            "z" : 40
+        },
+        "orientation" : 14,
+        "speed" : 24,
+        "stamina" : 30
+    },
+    "marker2" : {
+        "name" : "55",
+        "position" : {
+            "x" : 36,
+            "y" : 52,
+            "z" : 21
+        },
+        "orientation" : 24,
+        "speed" : 35,
+        "stamina" : 16
+    },
+    "marker3" : {
+        "name" : "D5",
+        "position" : {
+            "x" : 79,
+            "y" : -36,
+            "z" : 15
+        },
+        "orientation" : 65,
+        "speed" : 10,
+        "stamina" : 5
+    }
+}
+    
