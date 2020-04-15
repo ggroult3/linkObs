@@ -13,8 +13,10 @@ app.get('/',function(req,res){
     console.log('\nConnected to the webapp !\n')
 })
 
-app.get('/getData', function(req,res){
-    res.status(200).sendFile(path.join(__dirname, '/assets/json/data.json'))
+app.get('/getData/:scenario', function(req,res){
+    const scenario = req.params.scenario
+    const pathURL = '/assets/json/' + scenario + '.json'
+    res.status(200).sendFile(path.join(__dirname, pathURL))
     console.log('\nData sent')
 })
 

@@ -1,0 +1,29 @@
+{
+    "marker1" : {
+        "name" : "C1",
+        "position" : {
+            "x" : -5,
+            "y" : -43
+        },
+        "orientation" : 37,
+        "speed" : 12
+    },
+    "marker2" : {
+        "name" : "C2",
+        "position" : {
+            "x" : 16,
+            "y" : 92
+        },
+        "orientation" : 71,
+        "speed" : 28
+    },
+    "marker3" : {
+        "name" : "C3",
+        "position" : {
+            "x" : 91,
+            "y" : -68
+        },
+        "orientation" : 59,
+        "speed" : 34
+    }
+}
