@@ -1,9 +1,8 @@
 const express = require('express')
-const cors = require('cors')
 const app = express()
 const path = require('path')
-
-app.use(cors());
+const server = require('http').Server(app)
+const io = require('socket.io').listen(server)
 
 app.use('/',express.static(path.join(__dirname,'/assets')))
 
@@ -32,8 +31,13 @@ app.get('/assets/css/style.css', function(req,res){
     console.log('File style.css charged !')
 })
 
+io.sockets.on('connection', function (socket){
+    socket.emit('news',{hello: 'world'})
+    socket.on('my other event', function(data){
+        console.log(data)
+    })
+})
 
 console.log('\nServer launched !')
-app.set('port', process.env.PORT || 8080);
-app.listen(app.get('port'))
+server.listen(8080)
 console.log('You can connect yourself locally to this address : localhost:' + app.get('port'))
