@@ -1,1 +1,23 @@
-{"marker1":{"name":"E5","position":{"x":48,"y":98,"z":88},"orientation":232,"speed":61,"stamina":60},"marker2":{"name":"55","position":{"x":74,"y":23,"z":-2},"orientation":95,"speed":60,"stamina":64},"marker3":{"name":"D5","position":{"x":9,"y":37,"z":-89},"orientation":333,"speed":16,"stamina":3}}
+{
+    "marker1":
+    {
+        "name":"E5",
+        "position":
+        {
+            "x":48,
+            "y":98,
+            "z":88
+        },
+        "orientation":232,
+        "speed":61,
+        "stamina":60
+    },
+    "marker2":
+    {
+        "name":"55","position":{"x":74,"y":23,"z":-2},"orientation":95,"speed":60,"stamina":64
+    },
+    "marker3":
+    {
+        "name":"D5","position":{"x":9,"y":37,"z":-89},"orientation":333,"speed":16,"stamina":3
+    }
+}

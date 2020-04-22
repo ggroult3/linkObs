@@ -3,8 +3,11 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io').listen(server)
 const fs = require('fs')
+const cors = require('cors')
 
 const PORT = process.env.PORT || 3000
+
+app.use(cors())
 
 app.get('/',function(req,res){
     res.status(200).sendFile(__dirname + '/assets/html/index.html')
