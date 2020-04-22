@@ -41,6 +41,7 @@ io.sockets.on('connection', function(socket){
             if (err) throw err;
             console.log('Data written to file');
         })
+        socket.broadcast.emit('update data')
     })
 })
 
