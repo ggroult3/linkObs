@@ -1,7 +1,9 @@
 console.log('Hello, world!')
 
-const socket = io.connect('http://localhost')
-socket.on('news', function (data){
-    console.log(data)
-    socket.emit('my other event', {my: 'data'})
+const socket = io.connect('http://localhost:8080')
+
+socket.emit("nouveau_client")
+
+socket.on('new_connection', function (){
+    console.log("Un nouveau client s'est connecté")
 })

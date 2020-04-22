@@ -1,40 +1,32 @@
 const express = require('express')
 const app = express()
-const path = require('path')
 const server = require('http').Server(app)
 const io = require('socket.io').listen(server)
 
-app.use('/',express.static(path.join(__dirname,'/assets')))
-
 app.get('/',function(req,res){
-    app.use('/',express.static(path.join(__dirname,'/assets')))
-    res.status(200).sendFile(path.join(__dirname,'/assets/html/index.html'))
+    res.status(200).sendFile(__dirname + '/assets/html/index.html')
     console.log('\nConnected to the webapp !\n')
 })
 
-app.get('/getData/:scenario', function(req,res){
-    const scenario = req.params.scenario
-    const pathURL = '/assets/json/' + scenario + '.json'
-    res.status(200).sendFile(path.join(__dirname, pathURL))
-    console.log('\nData sent')
+app.use('/',express.static(__dirname + '/assets'))
+
+app.get('/assets/:dir/:file',function(req,res){
+    dir = req.params.dir
+    file = req.params.file
+    pathURL = __dirname + '/assets/' + dir + '/' + file
+    res.status(200).sendFile(pathURL)
 })
 
-app.get('/assets/:dir/:filename', function(req,res){
-    const filename = req.params.filename
-    const dir = req.params.dir
-    res.status(200).sendFile(path.join(__dirname + "/assets/" + dir + "/" + filename))
-    console.log('File ' + filename + ' from ' + dir + ' folder charged !')
+app.get('/getData/:scenario',function(req,res){
+    scenario = req.params.scenario
+    pathURL = __dirname + '/assets/json/' + scenario + '.json'
+    res.status(200).sendFile(pathURL)
 })
 
-app.get('/assets/css/style.css', function(req,res){
-    res.status(200).sendFile(path.join(__dirname + "/assets/css/style.css"))
-    console.log('File style.css charged !')
-})
-
-io.sockets.on('connection', function (socket){
-    socket.emit('news',{hello: 'world'})
-    socket.on('my other event', function(data){
-        console.log(data)
+io.sockets.on('connection', function(socket){
+    socket.on('nouveau_client', function(){
+        console.log("New online client !")
+        socket.broadcast.emit('new_connection')
     })
 })
 
