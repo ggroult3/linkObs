@@ -34,6 +34,10 @@ io.sockets.on('connection', function(socket){
     socket.on('update soccer',function(markers){
         let data = JSON.stringify(markers)
         console.log(data)
+        fs.writeFile(__dirname + '/assets/json/foot.json', data, (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        })
     })
 })
 

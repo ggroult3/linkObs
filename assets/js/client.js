@@ -1,6 +1,7 @@
 console.log('Hello, world!')
 
-const socket = io.connect('https://linkobs.herokuapp.com/')
+const socket = io.connect('https://linkobs.herokuapp.com/') // for local test
+// const socket = io.connect('http://localhost:3000') // for heroku deploiement
 
 socket.emit("nouveau_client")
 
