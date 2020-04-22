@@ -3,6 +3,8 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io').listen(server)
 
+const PORT = process.env.PORT || 3000
+
 app.get('/',function(req,res){
     res.status(200).sendFile(__dirname + '/assets/html/index.html')
     console.log('\nConnected to the webapp !\n')
@@ -31,5 +33,4 @@ io.sockets.on('connection', function(socket){
 })
 
 console.log('\nServer launched !')
-server.listen(8080)
-console.log('You can connect yourself locally to this address : localhost:' + app.get('port'))
+server.listen(PORT,() => console.log('Listening on ${PORT}'))
