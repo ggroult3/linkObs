@@ -33,7 +33,7 @@ io.sockets.on('connection', function(socket){
     })
     socket.on('update soccer',function(markers){
         let data = JSON.stringify(markers)
-        fs.writeFileSync('/assets/json/foot.json',data)
+        console.log(data)
     })
 })
 
