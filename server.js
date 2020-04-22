@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io').listen(server)
+const fs = require('fs')
 
 const PORT = process.env.PORT || 3000
 
@@ -29,6 +30,10 @@ io.sockets.on('connection', function(socket){
     socket.on('nouveau_client', function(){
         console.log("New online client !")
         socket.broadcast.emit('new_connection')
+    })
+    socket.on('update soccer',function(markers){
+        let data = JSON.stringify(markers)
+        fs.writeFileSync('/assets/json/foot.json',data)
     })
 })
 

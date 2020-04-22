@@ -46,6 +46,7 @@ document.querySelector('#updater').addEventListener("click",function(){
         speed : randint(0,100),
         stamina : randint(0,100)
     }
-    let data = {marker1,marker2,marker3}
-    console.log(data)
+    let markers = {marker1,marker2,marker3}
+    console.log(markers)
+    socket.emit("update soccer",markers)
 })
