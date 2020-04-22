@@ -1,6 +1,6 @@
 console.log('Hello, world!')
 
-const socket = io.connect('http://localhost:8080')
+const socket = io.connect('https://linkobs.herokuapp.com/')
 
 socket.emit("nouveau_client")
 
