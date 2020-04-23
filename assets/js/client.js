@@ -13,6 +13,10 @@ function randint(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+socket.on('update data',function(){
+    console.log("Data updated, ready to read by ObservableHQ notebook")
+})
+
 document.querySelector('#updater').addEventListener("click",function(){
     let marker1 = {
         name : 'E5',
