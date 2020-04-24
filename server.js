@@ -23,10 +23,20 @@ app.get('/assets/:dir/:file',function(req,res){
     res.status(200).sendFile(pathURL)
 })
 
-app.get('/getData/:scenario',function(req,res){
+app.get('/sendData/:scenario',function(req,res){
     scenario = req.params.scenario
     pathURL = __dirname + '/assets/json/' + scenario + '.json'
     res.status(200).sendFile(pathURL)
+})
+
+app.post('/getData', function(req,res){
+    scenario = req.body.name
+    pathURL = __dirname + '/assets/json/' + scenario + '.json'
+    data = JSON.stringify(req.body.data)
+    fs.writeFile(pathURL, data,(err) => {
+        if (err) throw err;
+        console.log('Data written to file');
+    })
 })
 
 io.sockets.on('connection', function(socket){
