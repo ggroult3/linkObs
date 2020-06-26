@@ -6,7 +6,8 @@
             "y" : -43
         },
         "orientation" : 37,
-        "speed" : 12
+        "speed" : 12,
+        "displacement" : [[15,6],[12,9],[11,12],[19,15],[10,6]]
     },
     "marker2" : {
         "name" : "C2",
@@ -15,7 +16,8 @@
             "y" : 92
         },
         "orientation" : 71,
-        "speed" : 28
+        "speed" : 28,
+        "displacement" : [[50,18],[10,6],[-49,36],[15,-24],[-5,6]]
     },
     "marker3" : {
         "name" : "C3",
@@ -24,6 +26,7 @@
             "y" : -68
         },
         "orientation" : 59,
-        "speed" : 34
+        "speed" : 34,
+        "displacement" : [[70,50],[77,30],[84,10],[91,10],[98,30]]
     }
 }

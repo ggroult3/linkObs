@@ -51,7 +51,11 @@ document.querySelector('#updater').addEventListener("click",function(){
         speed : randint(0,100),
         stamina : randint(0,100)
     }
-    let markers = {marker1,marker2,marker3}
+    let map = {
+        title : "Soccer map",
+        URL : "https://linkobs.herokuapp.com/assets/img/foot.jpg"
+    }
+    let markers = {marker1,marker2,marker3,map}
     console.log(markers)
     socket.emit("update soccer",markers)
 })
